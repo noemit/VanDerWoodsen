@@ -123,6 +123,30 @@ background: #444;
 margin-bottom: 9px;
 width: 100%;
 }
+#footer
+{
+background: #444;
+height:400px;
+}
+#footerwrap{
+	width:900px;
+	margin:auto;
+height:400px;}
+.footercols {
+width: 264px;
+font-family: arial;
+float: left;
+height: 400px;
+margin: 18px;
+font-size: 13px;
+color: #aaa;
+line-height: 28px;
+}
+.footercols h1 {
+	color: #eee;
+font-family: initial;
+font-weight: 100;
+}
 #pagination
 {
 	height: 50px;
