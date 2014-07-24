@@ -223,12 +223,16 @@ tallstyle();
 // hide all the products, then show only the sale products
 paginationshowall.onclick = function(e) {
 		ooak.className = "normal";
+		lastchance.className = "normal";
+		lastchancevisible = "0";
 		ooakvisible = "0";
 		paginationshowall.style.display = 'none';
 		page1button.style.display = 'inline-block';
 		page2button.style.display = 'inline-block';
 		pageone();
 }
+
+// toggle one of a kind button
 ooak.onclick = function(e){
 		console.log("clicked");
 console.log(ooakvisible);
@@ -264,6 +268,7 @@ for (var i = 0; i < products.length; ++i) {
 		
 	  }
 
+	 // toggle last chance button
 lastchance.onclick = function(e){
 		console.log("clicked");
 console.log(lastchancevisible);
