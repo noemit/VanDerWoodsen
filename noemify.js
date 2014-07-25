@@ -12,7 +12,9 @@ window.onload = function(){
 	}
 
 
-	//sorting buttons
+	//sorting buttons.
+	//the names dont make sense because i changed the styles too many times.
+	//Originally there was a very tall style and a very tiny one.
 	var tall = document.getElementById("tall");
 	var mini = document.getElementById("mini");
 
