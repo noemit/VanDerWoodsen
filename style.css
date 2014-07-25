@@ -134,17 +134,20 @@ height:400px;
 height:400px;}
 .footercols {
 width: 264px;
-font-family: arial;
+font-family: sans-serif;
 float: left;
 height: 400px;
 margin: 18px;
 font-size: 13px;
-color: #aaa;
+color: #ccc;
 line-height: 28px;
+text-align:justify;
 }
+
+.footercols dl {color:white;}
 .footercols h1 {
-	color: #eee;
-font-family: initial;
+	color: #aaa;
+font-family: 'Cinzel', serif;
 font-weight: 100;
 }
 #pagination
