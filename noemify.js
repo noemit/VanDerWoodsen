@@ -1,5 +1,4 @@
-
-	window.onload=function(){
+window.onload = function(){
 
 	//the products inside object wrapper
 	var products = document.getElementsByClassName("box");
