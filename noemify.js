@@ -19,36 +19,33 @@ var mini = document.getElementById("mini");
 
 //images only?
 var imagesonlyactive = "0";
-var hideprice = document.getElementById("hideprice");
 
 //global variable to check if the price is visible
 var pricevisible = "1";
-
 
 //the spans that indicate a product is one of a kind
 var ooakproducts = document.getElementsByClassName("oneofakind");
 
 //button to show one of a kind items only
 var ooak = document.getElementById("ooak");
+
+// is one of a kind sort mode active?
 var ooakvisible = "0";
 
 //the spans that indicate a product is almost sold out
 var lastchanceproducts = document.getElementsByClassName("lastchance");
 
-//button to show one of a kind items only
+//button to products that are almost sold out
 var lastchance = document.getElementById("lastchance");
-var lastchancevisible = "0";
 
+//is almost sold out sort mode active?
+var lastchancevisible = "0";
 
 //pagination buttons
 var page1button = document.getElementById("page1button");
 var page2button = document.getElementById("page2button");
 //pagination show all
 var paginationshowall = document.getElementById("paginationshowall");
-//hide productImages when page loads
-for (var i = 0; i < productImages.length; ++i) {
-	productImages[i].style.display = 'none';
-}
 
 //default style of 'tall'
 for (var i = 0; i < products.length; ++i) {
@@ -59,7 +56,7 @@ for (var i = 0; i < products.length; ++i) {
 	productImages[i].style.margin = 'auto';
 	    };
 
-//shoddy pagination
+//this is my poorly made semi-hard-coded pagination
 //show page 1 objects only
 function pageone() {
 
@@ -74,11 +71,11 @@ function pageone() {
 }
 pageone();
 
-//go to page one
+//go to page one when you click the page one button
 page1button.onclick = function(e){
 	pageone();
 }
-//go to page two 
+//go to page two when you click the page two button
 page2button.onclick = function(e){
 	page2button.className = "pressed";
 	page1button.className = "normal";
@@ -86,6 +83,7 @@ page2button.onclick = function(e){
 	products[i].style.display = 'none';
 }
 
+//making sure my for loop doesnt go past how many products i actually have or else it will throw an error
 if (products.length > 15)
 		{
 			for (var i = 8, limit=15; i < limit; ++i) {
@@ -118,7 +116,7 @@ function tallstyle() {
 			if (products[i].hasChildNodes()) {
      		var children = products[i].childNodes;               
 
-   			  // Loop through the children
+   			  // Loop through the children to make sure they all are block style.
     		 for(var c=0; c < children.length; c++) {
      		 if(children[c].title !== undefined) {
      		  children[c].style.display = 'block';
@@ -172,11 +170,10 @@ mini.onclick = function(e){
 	{
 	
 		tallstyle();
-		//images 
 	}
 	}
 
-// toggle price
+// toggle price visibility
 hideprice.onclick = function(e){
 
 		console.log("clicked");
@@ -212,6 +209,7 @@ for (var i = 0; i < products.length; ++i) {
 
 
 } else if (pricevisible == "0") {
+	//to toggle back, just go back to tallstyle/original/'classic'
 tallstyle();
 }
 		
@@ -220,7 +218,7 @@ tallstyle();
 }
 
 
-// hide all the products, then show only the sale products
+// go back to original pagination from sort modes
 paginationshowall.onclick = function(e) {
 		ooak.className = "normal";
 		lastchance.className = "normal";
